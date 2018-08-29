@@ -66,7 +66,8 @@ struct DoublyLinkedList {
     if(it == nullptr)
       return false;
     head = it->next;
-    delete head;
+    head->prev = nullptr;
+    delete it;
     return true;
   }
   bool deleteByValue(int val) {
